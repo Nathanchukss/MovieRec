@@ -103,10 +103,11 @@ This project uses the [MovieLens 100K Dataset](https://grouplens.org/datasets/mo
 - `ratings.csv` - 100,836 ratings from 610 users
 - `links.csv` - TMDB/IMDB identifiers for poster images
 
-## License
 
-MIT License - feel free to use and modify for your own projects!
+## 📄 License
+
+MIT License - feel free to use and modify for your own projects.
 
 ---
 
-Built with ❤️ using [Lovable](https://lovable.dev)
+**Built with Lovable by Nathan Nwaokocha**
