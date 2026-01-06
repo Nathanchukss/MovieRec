@@ -1,73 +1,84 @@
-# Welcome to your Lovable project
+# MovieRec 🎬
 
-## Project info
+A Netflix-style movie recommendation engine built with React and TypeScript, featuring content-based and collaborative filtering algorithms.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+![MovieRec](https://img.shields.io/badge/Movies-9700%2B-red) ![React](https://img.shields.io/badge/React-18.3-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
 
-## How can I edit this code?
+## Overview
 
-There are several ways of editing your application.
+MovieRec provides personalized movie recommendations using the MovieLens dataset (9,700+ movies, 100K+ ratings). The app combines two powerful recommendation approaches:
 
-**Use Lovable**
+- **Content-Based Filtering**: Recommends movies similar to ones you like based on genre analysis using TF-IDF vectorization and cosine similarity
+- **Collaborative Filtering**: Suggests movies based on what similar users enjoyed, using user-item rating patterns
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Origin Story
 
-Changes made via Lovable will be committed automatically to this repo.
+This project was **originally developed in Python** using popular data science libraries (pandas, NumPy, scikit-learn) for feature extraction and similarity computation. The initial implementation included:
 
-**Use your preferred IDE**
+- TF-IDF vectorization with `TfidfVectorizer` from scikit-learn
+- Cosine similarity calculations using `sklearn.metrics.pairwise`
+- User-based collaborative filtering with rating matrices
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+The entire recommendation engine was then **transitioned to TypeScript** to run entirely in the browser, eliminating the need for a backend server while maintaining the same algorithmic approach.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Features
 
-Follow these steps:
+- 🔍 **Movie Search** - Find movies by title with instant results
+- ⭐ **Rate Movies** - 5-star rating system stored locally
+- 🎯 **Personalized Recommendations** - Get suggestions based on your ratings
+- 🎬 **"Because You Liked..."** - Content-based similar movie suggestions
+- 📊 **Trending & Top Rated** - Discover popular movies
+- 🌙 **Netflix-Style UI** - Dark theme with smooth animations
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+## Tech Stack
+
+- **Frontend**: React 18, TypeScript, Tailwind CSS
+- **UI Components**: shadcn/ui, Lucide Icons
+- **State Management**: React Context API
+- **Data**: MovieLens 100K Dataset
+- **Algorithms**: Custom TF-IDF & Cosine Similarity implementation
+
+## How It Works
+
+### Content-Based Filtering
+1. Extracts genre features from each movie
+2. Applies TF-IDF (Term Frequency-Inverse Document Frequency) weighting
+3. Computes cosine similarity between movie vectors
+4. Returns top-N most similar movies
+
+### Collaborative Filtering
+1. Builds a user-item rating matrix
+2. Calculates similarity between users based on rating patterns
+3. Predicts ratings for unseen movies using weighted averages
+4. Recommends highest predicted-rating movies
+
+## Getting Started
+
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to project directory
+cd movierec
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Dataset
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This project uses the [MovieLens 100K Dataset](https://grouplens.org/datasets/movielens/):
+- `movies.csv` - 9,742 movies with titles and genres
+- `ratings.csv` - 100,836 ratings from 610 users
+- `links.csv` - TMDB/IMDB identifiers for poster images
 
-**Use GitHub Codespaces**
+## License
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+MIT License - feel free to use and modify for your own projects!
 
-## What technologies are used for this project?
+---
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Built with ❤️ using [Lovable](https://lovable.dev)
