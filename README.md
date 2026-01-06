@@ -11,15 +11,39 @@ MovieRec provides personalized movie recommendations using the MovieLens dataset
 - **Content-Based Filtering**: Recommends movies similar to ones you like based on genre analysis using TF-IDF vectorization and cosine similarity
 - **Collaborative Filtering**: Suggests movies based on what similar users enjoyed, using user-item rating patterns
 
-## Origin Story
+## Origin Story: From Python to TypeScript
 
-This project was **originally developed in Python** using popular data science libraries (pandas, NumPy, scikit-learn) for feature extraction and similarity computation. The initial implementation included:
+This project was **originally developed in Python** using popular data science libraries for feature extraction and similarity computation:
 
-- TF-IDF vectorization with `TfidfVectorizer` from scikit-learn
-- Cosine similarity calculations using `sklearn.metrics.pairwise`
+```python
+# Original Python implementation
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+import pandas as pd
+
+# TF-IDF vectorization on movie genres
+tfidf = TfidfVectorizer(stop_words='english')
+tfidf_matrix = tfidf.fit_transform(movies['genres'])
+
+# Compute cosine similarity matrix
+cosine_sim = cosine_similarity(tfidf_matrix, tfidf_matrix)
+```
+
+The original Python stack included:
+- **pandas** for data manipulation and CSV parsing
+- **NumPy** for numerical operations and matrix handling
+- **scikit-learn** for TF-IDF vectorization and cosine similarity
 - User-based collaborative filtering with rating matrices
 
-The entire recommendation engine was then **transitioned to TypeScript** to run entirely in the browser, eliminating the need for a backend server while maintaining the same algorithmic approach.
+### Why Transition to TypeScript?
+
+The entire recommendation engine was **rewritten in TypeScript** to:
+- ✅ Run entirely in the browser with no backend required
+- ✅ Eliminate server costs and API latency
+- ✅ Provide instant recommendations without network calls
+- ✅ Enable easy deployment as a static site
+
+The same algorithms (TF-IDF, cosine similarity, collaborative filtering) were implemented from scratch in TypeScript, maintaining identical recommendation quality while gaining the benefits of a client-side architecture.
 
 ## Features
 
