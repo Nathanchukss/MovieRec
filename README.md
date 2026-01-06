@@ -4,6 +4,10 @@ A Netflix-style movie recommendation engine built with React and TypeScript, fea
 
 ![MovieRec](https://img.shields.io/badge/Movies-9700%2B-red) ![React](https://img.shields.io/badge/React-18.3-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
 
+## 🌐 Live Website
+
+Visit the live portfolio: [View Portfolio](https://movierecc.lovable.app)
+
 ## Overview
 
 MovieRec provides personalized movie recommendations using the MovieLens dataset (9,700+ movies, 100K+ ratings). The app combines two powerful recommendation approaches:
